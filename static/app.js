@@ -1,11 +1,10 @@
+const API = 'http://localhost:3000'
+
 const populateProducts = async () => {
   const products = document.querySelector('#products')
   products.innerHTML = ''
-  const data = [
-    {id: 'A1', name: 'Scooter Comète', rrp: '99.99', info: 'Un petit scooter, rapide en ville et facile à garer.'},
-    {id: 'A2', name: 'Camion Titan', rrp: '303.33', info: 'Un véhicule utilitaire conçu pour transporter presque n\'importe quoi.'},
-    {id: 'B1', name: 'Coupé Mirage', rrp: '22.40', info: 'Une voiture sportive au style élégant et au prix étonnamment bas.'}
-  ]
+  const res = await fetch(API)
+  const data = await res.json()
   for (const product of data) {
     const item = document.createElement('product-item')
     for (const key of ['name', 'rrp', 'info']) {
