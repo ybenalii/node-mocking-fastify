@@ -2,7 +2,7 @@
 
 TP Node.js : mock d'une petite API produits avec Fastify + WebSockets, et un front en vanilla JS branché dessus.
 
-## Lancer le truc
+## Lancer :
 
 ```bash
 # back
